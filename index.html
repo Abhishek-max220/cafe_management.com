@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Our Café</h1>
+    <div class="menu">
+        <!--  Coffee -->
+         <div class="menu-item">
+            <img src="https://t4.ftcdn.net/jpg/01/16/61/93/360_F_116619399_YA611bKNOW35ffK0OiyuaOcjAgXgKBui.jpg" alt="Coffee">
+            <h2>Coffee</h2>
+            <p>Price: $3.50</p>
+            <input type="number" id="coffee-qty" placeholder="Quantity" min="1" value="1">
+            <button onclick="addToBill('Coffee', 3.50, 'coffee-qty')">Add to Bill</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU=" alt="Pizza">
+            <h2>Pizza</h2>
+            <p>Price: $8.00</p>
+            <input type="number" id="pizza-qty" placeholder="Quantity" min="1" value="1">
+            <button onclick="addToBill('Pizza', 8.00, 'pizza-qty')">Add to Bill</button>
+        </div>
+        
+
+        <div class="menu-item">
+            <img src="https://cdn.pixabay.com/photo/2022/07/15/18/16/beef-burger-7323692_640.jpg" alt="Burger">
+            <h2>Burger</h2>
+            <p>Price: $6.00</p>
+            <input type="number" id="burger-qty" placeholder="Quantity" min="1" value="1">
+            <button onclick="addToBill('Burger', 6.00, 'burger-qty')">Add to Bill</button>
+        </div>
+        
+        <div class="menu-item">
+            <img src="https://media.istockphoto.com/id/527673038/photo/freshly-blended-fruit-smoothies-of-various-colors-and-tastes.jpg?s=612x612&w=0&k=20&c=G1kf5N8QhQMe-yb9GdKj13YJ-2ZPn6f-myRwxV64I50=" alt="Smoothie">
+            <h2>Smoothie</h2>
+            <p>Price: $4.50</p>
+            <input type="number" id="smoothie-qty" placeholder="Quantity" min="1" value="1">
+            <button onclick="addToBill('Smoothie', 4.50, 'smoothie-qty')">Add to Bill</button>
+        </div>
+        
+        <!-- Tea -->
+        <div class="menu-item">
+            <img src="https://t3.ftcdn.net/jpg/02/18/53/26/360_F_218532663_Meqbe06Mqr4X7DV3vfM4usMkfML47thJ.jpg" alt="Tea">
+            <h2>Tea</h2>
+            <p>Price: $2.50</p>
+            <input type="number" id="tea-qty" placeholder="Quantity" min="1" value="1">
+            <button onclick="addToBill('Tea', 2.50, 'tea-qty')">Add to Bill</button>
+        </div>
+    </div>
+
+    <!-- Total Bill Section -->
+    <div class="bill">
+        <h2>Total Bill</h2>
+        <p id="bill-details">No items added yet.</p>
+        <h3 id="total-amount">Total: $0.00</h3>
+        <img src="qr code.jpg" alt="">
+        <h2>PAY BY THIS QR CODE</h2>
+    </div>
+
+    <!-- Feedback Section -->
+    <div class="feedback">
+        <h2>Feedback</h2>
+        <form id="feedback-form">
+            <label for="rating">Rate your experience (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+            
+            <label for="comments">Leave a comment:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Your comments..."></textarea>
+            
+            <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+        </form>
+        <div id="feedback-output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
